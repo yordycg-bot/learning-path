@@ -13,7 +13,7 @@ Este repositorio es un entorno de **estudio autodidacta** para la transición ha
 
 ## Estructura del Repositorio
 
-- `docs/roadmap.md`: Hoja de ruta estratégica en Modelo de Dos Etapas: Pre-Graduación (F1–F5 + Buffer laboral) y Post-Graduación (Especializaciones A Data, B Cloud/K8s, C Mobile KMP).
+- `docs/roadmap.md`: Hoja de ruta estratégica en Modelo de Dos Etapas: Pre-Graduación (F1–F5 + búsqueda laboral) y Post-Graduación (Especializaciones A Data, B Cloud/K8s; C Mobile KMP opcional).
 - `docs/SOURCES.md`: Inventario de fuentes de aprendizaje y recursos técnicos verificados.
 - `learning-*/`: Módulos de estudio y ejercicios prácticos (e.g., `learning-c/`, `learning-dsa/`).
 - `projects/`: Proyectos de portfolio estructurados como repositorios independientes con su propio build system y documentación.
