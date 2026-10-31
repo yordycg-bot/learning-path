@@ -33,9 +33,9 @@ The repository is organized by active modules, planned roadmap phases, and stand
 - [`projects/`](./projects/) — Standalone roadmap projects (e.g., [`projects/mysh/`](./projects/mysh/)) managed as independent Git repositories with their own commit history, source code (`src/`), build system (`Makefile`), and architecture docs (`docs/`).
 - [`learning-c/`](./learning-c/) — Linux Internals, Memory Management (Stack/Heap), Syscalls, IPC, Signals (Phase 1, complete up to `mysh v2.0`).
 - [`learning-dsa/`](./learning-dsa/) — Data Structures & Algorithms (criterio de selección): C cerrado con arrays y linked list; el resto en Go (NeetCode Blind 75).
+- [`learning-go/`](./learning-go/) — Go just-in-time orientado a `taskapi` (F2): Tour, slices, structs, interfaces, errores, concurrencia, HTTP y tests. Syllabus en [`learning-go/README.md`](./learning-go/README.md).
 
 ### Planned Roadmap Modules (Created on module arrival)
-- `learning-go/` — Go fundamentals, Concurrency (Goroutines, Channels), idiomatic error handling, testing (TDD), and HTTP stdlib (Phase 2).
 - `learning-postgres/` — Advanced SQL, schema design, ER modeling, index analysis (`EXPLAIN ANALYZE`), and transaction isolation (Phase 2).
 - `learning-distributed/` — Containerization (Docker Compose), caching (Redis), resilience patterns (Circuit Breaker, Rate Limiting), and observability (Prometheus, OpenTelemetry) (Phase 3).
 - `learning-architecture/` — Software Architecture, DDD pragmático, System Design fundamentals, and Design Patterns (GoF pragmático) (Phase 4).
@@ -43,6 +43,7 @@ The repository is organized by active modules, planned roadmap phases, and stand
 
 ### Sister Repositories
 - [`ai-learning-path`](../ai-learning-path/) — AI Engineering track (LLMs, RAG, Agentic Systems, Evaluation, Production). Operates in seasonal blocks during vacation periods.
+- [`yordycg-portfolio`](https://github.com/yordycg/yordycg-portfolio) — CV, LinkedIn, job tracker and outreach for the remote job search (from June 2027).
 
 ---
 
@@ -55,6 +56,10 @@ just              # Lista las recetas disponibles
 just run <file>   # Compila y ejecuta con ASan + UBSan en C, o -race en Go
 just test <file>  # Ejecuta y valida el código de retorno ($?)
 just check <file> # Comprobación de sintaxis estática rápida
+just test-go      # go test -v -race -count=1 ./... en learning-go/
+just bench-go     # Benchmarks de learning-go/
+just fmt-go       # gofmt sobre learning-go/
+just lint-go      # go vet sobre learning-go/
 just mysh         # Compila el proyecto semanal mysh
 just clean        # Limpia binarios generados en build/
 ```

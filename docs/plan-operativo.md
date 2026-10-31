@@ -71,6 +71,7 @@
 ## 5. Búsqueda global (desde junio 2027)
 
 - **Preparación:** CV y LinkedIn en inglés, 3 historias STAR con métricas reales, mocks semanales.
+- **Dónde se gestiona:** tracker de ofertas, CV, LinkedIn y outreach en [`yordycg-portfolio`](https://github.com/yordycg/yordycg-portfolio). Aquí solo se registran los hitos que condicionan el estudio.
 - **Canales:** job boards remotos, LinkedIn y referidos. Los referidos pesan más que las postulaciones frías.
 - **Meta:** 10–15 postulaciones por semana + 3 conversaciones con ingenieros del sector.
 - **Planes alternativos (no excluyentes):** freelance/contrato con startups de EE. UU. o Europa; trabajo en Chile como respaldo; producto propio si la validación es positiva.

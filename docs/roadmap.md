@@ -88,6 +88,8 @@ Parseo de comandos, ejecución con `fork`+`exec` (sin `system()`), pipes (`cmd1 
 **Período:** 2 nov 2026 – 15 feb 2027 (clases + exámenes + vacaciones; ~6 h/semana en clases y ~24 h/semana en vacaciones)
 
 > **Alcance recortado (regla de 2 h/día):** dentro de esta fase entran el schema, el CRUD, `pgx`/`pgxpool`, JWT propio, bcrypt y validación de inputs. Quedan para F3 el rate limiting, Redis, observabilidad y CI. Si G1 no se aprueba, `resilient-api` se reduce a cache + métricas.
+>
+> **Dónde se practica:** el syllabus semana a semana de Go vive en [`learning-go/README.md`](../learning-go/README.md), con las recetas `just test-go`, `just bench-go`, `just fmt-go` y `just lint-go`.
 
 ### Go
 
@@ -148,7 +150,7 @@ Flujo sugerido: resolver el lab de PortSwigger → volver al código en Go y apl
 
 ### Proyecto principal — `taskapi` (REST API con Go + PostgreSQL)
 
-CRUD de tasks/usuarios con schema modelado (ER diagram primero), JWT propio (sin librerías de auth), bcrypt, validación de inputs, índices parciales, transacciones multi-step, `pgxpool` (sin ORMs ni `sqlx` en esta fase), tests con mocking vía interfaces y script SQL/Go para poblar la DB. Docker mínimo al final: `docker compose up` levanta la API y Postgres.
+CRUD de tasks/usuarios con schema modelado (ER diagram primero), JWT propio (sin librerías de auth), bcrypt, validación de inputs, índices parciales, transacciones multi-step, `pgxpool` (sin ORMs ni `sqlx` en esta fase), tests con mocking vía interfaces y script SQL/Go para poblar la DB. Docker mínimo al final: `docker compose up` levanta la API y Postgres. **Cierre de fase (1–15 feb):** deploy público con HTTPS y gate G1.
 
 ---
 
@@ -341,9 +343,10 @@ Suite documental de arquitectura profesional que acompaña a los proyectos estre
 
 **Filtro de calidad técnica:**
 1. ¿Se levanta con un solo comando? (`docker compose up -d` → sistema corriendo con endpoints y telemetría viva en <90s).
-2. ¿Muestra resiliencia ante fallos reales? (Circuit breakers, rate limiting distribuido, transacciones seguras con Outbox, logs estructurados correlacionados por `request_id`).
-3. ¿Tiene benchmarks medibles reproducibles? (ejemplo de formato: "throughput de X a Y req/s con p99 bajo Z ms bajo carga k6"). **Regla:** si no se midió, no se escribe.
-4. ¿Tiene documentación de arquitectura profesional? (Diagramas C4, 2 ADRs, Post-mortem y Runbook operativo).
+2. ¿Está desplegado en una URL pública con HTTPS? Un repositorio sin deploy es una promesa; una URL viva es evidencia.
+3. ¿Muestra resiliencia ante fallos reales? (Circuit breakers, rate limiting distribuido, transacciones seguras con Outbox, logs estructurados correlacionados por `request_id`).
+4. ¿Tiene benchmarks medibles reproducibles? (ejemplo de formato: "throughput de X a Y req/s con p99 bajo Z ms bajo carga k6"). **Regla:** si no se midió, no se escribe.
+5. ¿Tiene documentación de arquitectura profesional? (Diagramas C4, 2 ADRs, Post-mortem y Runbook operativo).
 
 **Proyectos estrella del portfolio:**
 

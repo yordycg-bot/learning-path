@@ -17,6 +17,7 @@
 | **Con trabajo de medio tiempo** | Cualquiera | 30 min/día, 4 días/semana | **~2–5 h / semana** |
 
 - **Semana de baja intensidad (vacaciones):** cada 6 semanas se baja a 2 h/día para consolidar y evitar burnout.
+- **Regla del 80%:** planifica como máximo el 80% de tu capacidad. El 20% restante es para exámenes, imprevistos, salud y vida.
 - **Regla de proporción:** al menos la mitad de las horas deben ser código, no videos ni lectura.
 - **Domingo:** libre. Solo se usa para la revisión semanal de 20 min.
 

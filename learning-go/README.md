@@ -1,11 +1,11 @@
 # Go Track — Fase 2 (Go just-in-time, orientado a `taskapi`)
 
-> **Cockpit de estudio de Go.** El objetivo no es "terminar un temario de Go": es tener `taskapi v1` desplegada al final de F2 y saber defender cada línea. Go se aprende **construyendo**, no en un bloque de teoría previa.
+> **Cockpit de estudio de Go.** El objetivo no es "terminar un temario de Go": es tener `taskapi v1` funcionando y desplegada al final de F2 y saber defender cada línea. Go se aprende **construyendo**, no en un bloque de teoría previa.
 
 - **Módulo:** `learning-go` (un único `go.mod` en esta carpeta).
 - **Toolchain local:** Go 1.26.5 (`go version` verificado).
-- **Período:** 26 oct 2026 – 28 feb 2027 (F2).
-- **Entregable de la fase:** `taskapi v1` con URL pública, tests, CI y README/ADRs. Ver [`../docs/roadmap.md`](../docs/roadmap.md#5-fase-2--go--http--postgresql--deploy).
+- **Período:** 2 nov 2026 – 15 feb 2027 (F2). Ver [`../calendario.md`](../calendario.md).
+- **Entregable de la fase:** `taskapi v1` con URL pública, tests, CI y README/ADRs. Ver [`../docs/roadmap.md`](../docs/roadmap.md#fase-2--go--postgresql-profundo--seguridad).
 - **DSA:** ya **no está en pausa**. 2–3 problemas/semana desde la semana 1. Ver [`../learning-dsa/README.md`](../learning-dsa/README.md).
 
 ---
@@ -71,29 +71,28 @@ No son capítulos que se cursan "porque tocan". Se consultan **cuando el proyect
 
 ---
 
-## 5. Calendario: 5 semanas de semestre + vacaciones
+## 5. Calendario: 3 semanas de semestre + exámenes + vacaciones
 
-### Semanas de semestre (18 h efectivas/semana)
+### Semanas de semestre (6 h efectivas/semana)
 
 | Semana | Fechas | Go / proyecto | DSA |
 | :--- | :--- | :--- | :--- |
-| **S1** | 26 oct – 1 nov | Tour + `01-hello-world` + `02-integers` | 3 problemas (arrays / hash maps) |
-| **S2** | 2 – 8 nov | `03-iteration` + `04-arrays-slices`; esqueleto de `taskapi` + `docker compose` con Postgres | 3 problemas |
-| **S3** | 9 – 15 nov | `05-structs-methods-interfaces` + `06-pointers-errors`; 2 endpoints + table-driven tests | 3 problemas |
-| **S4** | 16 – 22 nov | `12-http-json`; auth (hash de passwords) + primer middleware; CI con `go vet` + `go test -race` | 3 problemas |
-| **S5** | 23 – 29 nov | Semana de exámenes: buffer, cerrar esqueleto, retrospectiva. **Sin temas nuevos** | Repaso de errores |
+| **S1** | 2 – 8 nov | Tour + `01-hello-world` + `02-integers` | 2–3 problemas (arrays / hash maps) |
+| **S2** | 9 – 15 nov | `03-iteration` + `04-arrays-slices`; esqueleto de `taskapi` + `docker compose` con Postgres | 2–3 problemas |
+| **S3** | 16 – 21 nov | `05-structs-methods-interfaces` + `06-pointers-errors`; 2 endpoints + table-driven tests | 2–3 problemas |
+| **S4** | 22 – 30 nov | Semana de exámenes: sin temas nuevos, solo repaso | Repaso de errores |
 
-**Criterio de éxito de las 5 semanas:** `taskapi` con esqueleto corriendo en Docker, ≥2 endpoints con test, CI verde y 12–15 problemas DSA resueltos. No hace falta que esté desplegada todavía.
+**Criterio de éxito de las 3 semanas:** `taskapi` con esqueleto corriendo en Docker, ≥2 endpoints con test, CI verde y 6–9 problemas DSA resueltos. No hace falta que esté desplegada todavía.
 
-### Vacaciones (dic 2026 – feb 2027, ~25 h efectivas/semana)
+### Vacaciones (dic 2026 – 15 feb 2027, ~24 h efectivas/semana)
 
 | Bloque | Foco | Resultado |
 | :--- | :--- | :--- |
 | Dic | Auth completa, migraciones, tests de integración con Postgres, `07`–`09` si hicieron falta | `taskapi` con CRUD + auth + tests |
-| Ene | Concurrencia aplicada (rate limiting), `slog`, Dockerfile multi-stage, deploy | **URL pública con HTTPS** |
-| Feb | Hardening, README + ADRs, hoja de ofertas, CV/LinkedIn | `taskapi v1` cerrada y presentable |
+| Ene | Concurrencia aplicada (rate limiting), `slog`, Dockerfile multi-stage | API dockerizada |
+| 1 – 15 feb | Hardening, deploy con HTTPS, README + ADRs, **gate G1** | `taskapi v1` pública y presentable |
 
-> Si el calendario se atrasa, se recorta alcance: primero el deploy, después los capítulos opcionales. **Nunca** se recorta DSA ni el deploy.
+> Si el calendario se atrasa, se recorta alcance: primero los capítulos opcionales, después el deploy. **Nunca** se recorta DSA.
 
 ---
 
