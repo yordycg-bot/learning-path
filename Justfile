@@ -129,6 +129,6 @@ mysh:
 
 # Limpia los binarios y artefactos de compilación
 clean:
-    @rm -rf build/ *.out
+    @rm -rf build/ learning-dsa/c/build/ *.out
     @if [ -d projects/mysh ]; then make -C projects/mysh clean 2>/dev/null || true; fi
     @echo "✓ Artefactos de compilación eliminados."
