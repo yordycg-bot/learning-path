@@ -2,7 +2,7 @@
 
 > **🚫 DIFERIDO — NO ACTIVO.** Decisión (2026-09-06): este plan **no se ejecuta durante la Fase 1 de C**. Ejecución prevista para **2027**, tras terminar C (~fin de Dic 2026) y arrancar la **Fase 2 (Python)** en vacaciones. No seguir el cronograma semanal de abajo (pertenecía al borrador Sep–Dic 2026, invalidado). El contenido técnico (cuña B, métodos realistas) sigue siendo la referencia para cuando se active.
 >
-> **Actualización (2026-10-31):** el plan vigente es [`plan-operativo.md`](./plan-operativo.md). Este documento queda solo como referencia histórica: la Fase 2 actual es **Go**, no Python, y el ingreso por freelance es un **plan alternativo**, no el objetivo principal. No ejecutar sin reescribirlo.
+> **Actualización (2026-10-31):** el plan vigente es [`plan-operativo.md`](../plan-operativo.md). Este documento queda solo como referencia histórica: la Fase 2 actual es **Go**, no Python, y el ingreso por freelance es un **plan alternativo**, no el objetivo principal. No ejecutar sin reescribirlo.
 >
 > **Origen (decisión 2026-09-04):** investigación de mercado (Perplexity + Gemini) sobre el mercado tech chileno de entrada + refinamiento (2026-09-05) según realidad del instituto y perfil. La idea es la "vía de ingreso" **complementaria** al roadmap — no lo reemplaza.
 
