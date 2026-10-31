@@ -1,52 +1,48 @@
 # Systems & Data Engineering Learning Path
 
-Repositorio de estudio autodidacta para la transición de estudiante de Ingeniería en Informática a **Backend Engineer**. El horizonte actual es **oct 2026 – nov 2027** (graduación): el objetivo de este período no es cubrir un temario, es **sentar bases backend empleables y salir al mercado antes de graduarse**.
+This repository serves as a personal sandbox and centralized codebase for my transition from Computer Science student to Backend & Systems Engineer (with ongoing post-graduation specializations in Data Engineering, Cloud/K8s, and Mobile).
 
-Contiene ejercicios atómicos, pruebas de concepto, el proyecto `taskapi` y práctica diaria de algoritmos. Las especializaciones (Data Engineering, Cloud/K8s, Mobile) quedan **diferidas a 2028+**, después del primer empleo.
+It contains code snippets, atomic exercises, conceptual proofs of concept (PoCs), and daily algorithm practices.
 
 ---
 
 ## Strategic Roadmap & Sources
 
-- **Roadmap:** [`docs/roadmap.md`](./docs/roadmap.md) — plan en Dos Etapas: Pre-Graduación (Fases 1–5 + Buffer, foco backend Go) y Especializaciones Post-Graduación (diferidas).
-- **Sources:** [`docs/SOURCES.md`](./docs/SOURCES.md) — catálogo de recursos verificados por tema, con estado (activo / on demand / diferido).
-- **Calendar & Dedication:** [`calendario.md`](./calendario.md) — modelo semestre/vacaciones, regímenes de horas e hitos de empleabilidad.
-- **Career (repo aparte):** [`yordycg-portfolio`](https://github.com/yordycg/yordycg-portfolio) — CV, LinkedIn, tracker de postulaciones y búsqueda laboral. No se duplica aquí.
-
-**Regímenes de dedicación:** 18 h/semana efectivas en semestre · 25 h/semana en vacaciones · 8 h en semanas de exámenes.
+- **Roadmap:** [`docs/roadmap.md`](./docs/roadmap.md) — Two-Stage strategic plan: Pre-Graduation (Phases 1–5, Go backend focus) and Post-Graduation Specializations (A: Data Engineering, B: Cloud & K8s; C: Mobile KMP is optional/out of scope).
+- **Operational Plan:** [`docs/plan-operativo.md`](./docs/plan-operativo.md) — Daily routine, gates (G1/G2), priorities and survival mode.
+- **Verified Sources:** [`docs/SOURCES.md`](./docs/SOURCES.md) — Exhaustive catalog of verified learning resources, official documentation, courses, and design papers.
+- **Calendar & Dedication:** [`calendario.md`](./calendario.md) — 2 h/day during class weeks (Sat–Sun–Mon) and 4 h/day during vacations (Mon–Sat). The plan is designed to survive a part-time job.
 
 ---
 
 ## Tech Stack & Tools
 
-- **Ahora:** C (cerrado como track), Go, SQL (PostgreSQL), Linux, Docker, Git, Just
-- **En F2–F3:** Redis, GitHub Actions, Prometheus/Grafana, `pprof`, `dlv`
-- **Diferido a 2028+:** Python, Kafka, dbt, DuckDB, Kubernetes, Terraform, KMP
-- **Entorno:** Neovim, Tmux, Makefiles, GDB, Valgrind, AddressSanitizer/UBSan
+- **Languages:** C, Go, Python, SQL (PostgreSQL)
+- **Infrastructure & Systems:** Linux (Arch/Fedora), Docker, Redis, Apache Kafka, Kubernetes
+- **Data Engineering:** dbt, DuckDB, Polars
+- **AI applied:** LLM API integration, retries/timeouts, tracing, cost and latency measurement
+- **Development Environment:** Neovim, Tmux, Makefiles, GDB, Valgrind, Just
 
 ---
 
 ## Repository Structure
 
-### Active Modules
+The repository is organized by active modules, planned roadmap phases, and standalone projects:
 
-- [`learning-dsa/`](./learning-dsa/) — DSA por patrones en Go (2–3 problemas/semana). El track de C (Big-O, dynamic array, linked list) quedó cerrado.
-- [`learning-go/`](./learning-go/) — Go just-in-time hacia `taskapi`: Tour + 6 capítulos núcleo (TDD) y el resto on demand.
-- [`learning-c/`](./learning-c/) — Linux Internals, memoria, syscalls, IPC y señales. **Cerrado** hasta `mysh v2.0`.
-- [`projects/`](./projects/) — Proyectos standalone (e.g. [`projects/mysh/`](./projects/mysh/)) como repos independientes con su build system y documentación.
+### Active Modules & Projects
+- [`projects/`](./projects/) — Standalone roadmap projects (e.g., [`projects/mysh/`](./projects/mysh/)) managed as independent Git repositories with their own commit history, source code (`src/`), build system (`Makefile`), and architecture docs (`docs/`).
+- [`learning-c/`](./learning-c/) — Linux Internals, Memory Management (Stack/Heap), Syscalls, IPC, Signals (Phase 1, complete up to `mysh v2.0`).
+- [`learning-dsa/`](./learning-dsa/) — Data Structures & Algorithms (criterio de selección): C cerrado con arrays y linked list; el resto en Go (NeetCode Blind 75).
 
-### Planned Modules (se crean cuando el proyecto los pida)
-
-- `learning-postgres/` — SQL, modelado, índices, `EXPLAIN ANALYZE`, transacciones (F2–F3).
-- `learning-infra/` — Docker, CI/CD, deploy, Redis, métricas y logs (F2–F3).
-- `learning-taskapi/` — el proyecto estrella de F2–F4 (o `learning-go/taskapi/` si no amerita módulo propio).
-- `learning-data-engineering/` — Kafka, DuckDB, dbt, arquitecturas Lambda/Kappa (**2028+**).
+### Planned Roadmap Modules (Created on module arrival)
+- `learning-go/` — Go fundamentals, Concurrency (Goroutines, Channels), idiomatic error handling, testing (TDD), and HTTP stdlib (Phase 2).
+- `learning-postgres/` — Advanced SQL, schema design, ER modeling, index analysis (`EXPLAIN ANALYZE`), and transaction isolation (Phase 2).
+- `learning-distributed/` — Containerization (Docker Compose), caching (Redis), resilience patterns (Circuit Breaker, Rate Limiting), and observability (Prometheus, OpenTelemetry) (Phase 3).
+- `learning-architecture/` — Software Architecture, DDD pragmático, System Design fundamentals, and Design Patterns (GoF pragmático) (Phase 4).
+- `learning-data-engineering/` — Event streaming (Kafka KRaft), analytics engines (DuckDB), data transformation (dbt), and pipeline architectures (Lambda/Kappa) (Post-Graduation Specialization A).
 
 ### Sister Repositories
-
-- [`yordycg-portfolio`](https://github.com/yordycg/yordycg-portfolio) — CV, LinkedIn, tracker y postulaciones.
-- [`ai-learning-path`](../ai-learning-path/) — AI Engineering (LLMs, RAG, agentes). Bloques estacionales en vacaciones, sin competir con la fase activa.
-
+- [`ai-learning-path`](../ai-learning-path/) — AI Engineering track (LLMs, RAG, Agentic Systems, Evaluation, Production). Operates in seasonal blocks during vacation periods.
 
 ---
 
@@ -57,12 +53,8 @@ El repositorio cuenta con recetas automáticas para compilar y probar código si
 ```bash
 just              # Lista las recetas disponibles
 just run <file>   # Compila y ejecuta con ASan + UBSan en C, o -race en Go
-just test <file>  # Ejecuta y reporta el código de retorno real ($?)
-just check <file> # Comprobación estática rápida (gcc / gofmt + go vet)
-just test-go      # Todos los tests de learning-go con -race
-just bench-go     # Benchmarks de learning-go
-just fmt-go       # Aplica gofmt a learning-go
-just lint-go      # go vet sobre learning-go
+just test <file>  # Ejecuta y valida el código de retorno ($?)
+just check <file> # Comprobación de sintaxis estática rápida
 just mysh         # Compila el proyecto semanal mysh
 just clean        # Limpia binarios generados en build/
 ```
@@ -71,12 +63,10 @@ just clean        # Limpia binarios generados en build/
 
 ## Core Principles Applied
 
-1. **No Code Spoonfed:** toda la lógica, punteros y estructuras se escriben a mano. La IA explica conceptos, diagnostica con herramientas y examina; no escribe el código de los ejercicios.
-2. **Build First, Theory Just-in-Time:** nada de bloques de teoría previa. Un tema se estudia cuando el proyecto lo exige y se verifica con algo que corre.
-3. **Ship It:** cada fase y cada semana terminan con algo desplegado, medido o mergeado. Un proyecto que no se puede levantar ni mostrar no cuenta.
-4. **Empleo primario, freelance secundario:** el objetivo del período es el primer empleo de desarrollador; el freelance es un experimento acotado, no un segundo track.
-5. **Deep over Broad:** un proyecto estrella bien hecho vale más que cinco a medias. Se recorta alcance antes que duplicar horas.
-6. **Structured Documentation:** comentarios en el código y ADRs cortos dentro del proyecto; el vault de Obsidian guarda las notas conceptuales.
+1. **No Code Spoonfed:** All logic, pointers, and structures are written manually. No dependency on AI code generation tools for foundational learning.
+2. **20% Theory / 80% Practice:** Concepts read in books and tutorials are immediately translated into compile-ready or executable code.
+3. **Architecture When it Hurts:** Patterns are introduced only when structural problems arise in the code, never prematurely.
+4. **Structured Documentation:** Every atomic topic is backed by conceptual notes, located in my Obsidian vault.
 
 ---
 
