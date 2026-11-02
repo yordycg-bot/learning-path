@@ -123,6 +123,17 @@ lint-go:
     go vet ./...
     echo "✓ go vet sin hallazgos en learning-go/"
 
+# Ejecuta los tests de taskapi (repo independiente en projects/)
+test-taskapi:
+    #!/usr/bin/env bash
+    set -uo pipefail
+    if [ ! -d projects/taskapi ]; then
+        echo "projects/taskapi/ todavía no existe. Se crea en S2 (9–15 nov)."
+        exit 0
+    fi
+    cd projects/taskapi
+    go test -v -race -count=1 ./...
+
 # Compila el proyecto semanal mysh
 mysh:
     @make -C projects/mysh
