@@ -30,7 +30,7 @@ It contains code snippets, atomic exercises, conceptual proofs of concept (PoCs)
 The repository is organized by active modules, planned roadmap phases, and standalone projects:
 
 ### Active Modules & Projects
-- [`projects/`](./projects/) — Standalone roadmap projects (e.g., [`projects/mysh/`](./projects/mysh/)) managed as independent Git repositories with their own commit history, source code (`src/`), build system (`Makefile`), and architecture docs (`docs/`).
+- [`projects/`](./projects/) — Standalone roadmap projects managed as independent Git repositories with their own commit history, source code (`src/`), build system (`Makefile`/`go.mod`), and architecture docs (`docs/`). Current: [`projects/mysh/`](./projects/mysh/) (C, closed at v2.0); `projects/taskapi/` is created in F2 as its own repo.
 - [`learning-c/`](./learning-c/) — Linux Internals, Memory Management (Stack/Heap), Syscalls, IPC, Signals (Phase 1, complete up to `mysh v2.0`).
 - [`learning-dsa/`](./learning-dsa/) — Data Structures & Algorithms (criterio de selección): C cerrado con arrays y linked list; el resto en Go (NeetCode Blind 75).
 - [`learning-go/`](./learning-go/) — Go just-in-time orientado a `taskapi` (F2): Tour, slices, structs, interfaces, errores, concurrencia, HTTP y tests. Syllabus en [`learning-go/README.md`](./learning-go/README.md).
@@ -60,6 +60,7 @@ just test-go      # go test -v -race -count=1 ./... en learning-go/
 just bench-go     # Benchmarks de learning-go/
 just fmt-go       # gofmt sobre learning-go/
 just lint-go      # go vet sobre learning-go/
+just test-taskapi # go test -v -race -count=1 ./... en projects/taskapi/ (F2)
 just mysh         # Compila el proyecto semanal mysh
 just clean        # Limpia binarios generados en build/
 ```

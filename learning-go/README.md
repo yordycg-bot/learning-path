@@ -5,7 +5,7 @@
 - **Módulo:** `learning-go` (un único `go.mod` en esta carpeta).
 - **Toolchain local:** Go 1.26.5 (`go version` verificado).
 - **Período:** 2 nov 2026 – 15 feb 2027 (F2). Ver [`../calendario.md`](../calendario.md).
-- **Entregable de la fase:** `taskapi v1` con URL pública, tests, CI y README/ADRs. Ver [`../docs/roadmap.md`](../docs/roadmap.md#fase-2--go--postgresql-profundo--seguridad).
+- **Entregable de la fase:** `taskapi v1` con URL pública, tests, CI y README/ADRs. Vive en su propio repo, [`../projects/taskapi/`](../projects/taskapi/), no en este módulo. Ver [`../docs/roadmap.md`](../docs/roadmap.md#fase-2--go--postgresql-profundo--seguridad).
 - **DSA:** ya **no está en pausa**. 2–3 problemas/semana desde la semana 1. Ver [`../learning-dsa/README.md`](../learning-dsa/README.md).
 
 ---
@@ -78,7 +78,7 @@ No son capítulos que se cursan "porque tocan". Se consultan **cuando el proyect
 | Semana | Fechas | Go / proyecto | DSA |
 | :--- | :--- | :--- | :--- |
 | **S1** | 2 – 8 nov | Tour + `01-hello-world` + `02-integers` | 2–3 problemas (arrays / hash maps) |
-| **S2** | 9 – 15 nov | `03-iteration` + `04-arrays-slices`; esqueleto de `taskapi` + `docker compose` con Postgres | 2–3 problemas |
+| **S2** | 9 – 15 nov | `03-iteration` + `04-arrays-slices`; esqueleto de [`taskapi`](../projects/taskapi/) (repo propio) + `docker compose` con Postgres | 2–3 problemas |
 | **S3** | 16 – 21 nov | `05-structs-methods-interfaces` + `06-pointers-errors`; 2 endpoints + table-driven tests | 2–3 problemas |
 | **S4** | 22 – 30 nov | Semana de exámenes: sin temas nuevos, solo repaso | Repaso de errores |
 
@@ -133,9 +133,10 @@ Verificación manual antes de cada commit:
 learning-go/
 ├── go.mod          # module learning-go (go 1.26)
 ├── README.md       # este archivo
-├── NN-tema/        # núcleo 01–06, se crea al empezar cada capítulo con su test primero
-└── taskapi/        # el proyecto real (se crea en S2)
+└── NN-tema/        # núcleo 01–06, se crea al empezar cada capítulo con su test primero
 ```
+
+`taskapi` **no** vive aquí: es un repositorio independiente en [`../projects/taskapi/`](../projects/taskapi/), con su propio `go.mod`, build system y commits. Este módulo es solo el cuaderno de estudio de Go.
 
 No se crean directorios vacíos ni tests de relleno: el primer commit de cada capítulo nace con el test que falla.
 
