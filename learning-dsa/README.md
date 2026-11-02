@@ -9,7 +9,8 @@
 > - **Objetivo de bajo nivel consolidado:** Los fundamentos de memoria física contigua vs. no contigua, punteros y gestión en el heap quedaron asimilados mediante `mysh v2.0`, `1-big-o.c`, `2-dynamic-array.c`, `3-array-tradeoffs.c` y la base de `4-linked-list.c` (verificados sin fugas con AddressSanitizer).
 > - **Maximización del ROI para Backend & Entrevistas:** Implementar desde cero estructuras auxiliares en C (stack, queue, hash table) aporta rendimientos decrecientes frente a la meta laboral. El entrenamiento algorítmico se traslada directamente a **Go** (`learning-dsa/go/` y NeetCode Blind 75), priorizando el **reconocimiento de patrones** (Two Pointers, Sliding Window, Monotonic Stack, Hash Sets), la fluidez idiomática con `slices` y `maps`, y el análisis de trade-offs en tiempo y espacio.
 > - **Qué se gana y qué se sacrifica:** se sacrifica la implementación manual de hash table en C; se compensa leyendo los internals de `map` en Go (Swiss tables) y resolviendo la categoría Arrays & Hashing de NeetCode. El criterio de selección se conserva; solo cambia el lenguaje de práctica.
-> - **DSA es hilo permanente, no fase:** arranca con la F2 (26 oct 2026) a **2–3 problemas/semana**, en paralelo a Go. Es requisito de entrevista, no un extra; por eso no se posterga ni se hace sprint final. Los problemas se resuelven **en Go** desde el inicio.
+> - **DSA es hilo permanente, no fase:** arranca el **16 nov 2026** (semana 3 de F2) a **2–3 problemas/semana**, en paralelo a Go. Es requisito de entrevista, no un extra; por eso no se posterga ni se hace sprint final. Los problemas se resuelven **en Go** desde el inicio.
+> - **Prerrequisito de sintaxis (2–15 nov 2026):** el primer bloque de F2 es Tour + capítulos `01`–`04` de *Learn Go with Tests*. Resolver DSA en un lenguaje que aún no se sabe escribir convierte el ejercicio en transcripción de la editorial; por eso el bloque diario de 40 min se reasigna a Go hasta que exista el vocabulario mínimo (`func`, `for`/`range`, slices, `map`).
 > - **Meta:** **~100–120 problemas** al cierre de F5 (nov 2027), organizados por patrón, con repaso de errores.
 
 ---
@@ -44,13 +45,13 @@
 
 | Semana | Fechas | Patrón | Objetivo |
 | :--- | :--- | :--- | :--- |
-| **G1** | 26 oct – 1 nov | Arrays & Hashing | 3 problemas: `contains duplicate`, `valid anagram`, `two sum` |
-| **G2** | 2 – 8 nov | Arrays & Hashing / Two Pointers | 3 problemas |
-| **G3** | 9 – 15 nov | Two Pointers / Sliding Window | 3 problemas |
-| **G4** | 16 – 22 nov | Stack | 3 problemas |
-| **G5** | 23 – 29 nov | **Repaso** (exámenes) | Rehacer los 3 problemas que peor salieron |
-| **dic 2026 – feb 2027** | Vacaciones | Binary Search → Linked List → Trees | 3/semana · acumulado ~40 |
+| **G0** | 2 – 15 nov | *(sin DSA: bloque de sintaxis Go)* | Tour + capítulos `01`–`04` de *Learn Go with Tests* |
+| **G1** | 16 – 22 nov | Arrays & Hashing | 3 problemas: `contains duplicate`, `valid anagram`, `two sum` |
+| **G2** | 23 – 29 nov | **Repaso** (exámenes) | Rehacer los 3 problemas que peor salieron |
+| **dic 2026 – feb 2027** | Vacaciones | Two Pointers → Sliding Window → Stack → Binary Search → Linked List → Trees | 3/semana · acumulado ~33 a 15 feb |
 
+> **Fecha dura: 16 nov 2026.** Si los capítulos `01`–`04` van atrasados ese día, DSA arranca igual con el primer problema en fuerza bruta (bucles anidados, sin `map`) y la optimización se hace al aprender `07-maps`. Mejor 3 problemas en $O(n^2)$ que 0 problemas.
+>
 > No hay pausa: la cadencia es baja a propósito (2–3/semana) para que sea sostenible durante 13 meses. Es preferible 3 problemas bien repasados que 10 vistos una vez.
 
 ---
@@ -96,7 +97,7 @@
 
 ### 📍 Activo: NeetCode & DSA en Go
 
-DSA está activo desde la semana 1 de F2, con la pista de **NeetCode Blind 75 / 150**:
+DSA está activo **desde el 16 de noviembre** (semana 3 de F2), con la pista de **NeetCode Blind 75 / 150**. Las dos primeras semanas de F2 son de sintaxis Go: no se resuelve ningún problema hasta tener `func`, `for`/`range`, slices y `map`.
 
 - **Foco:** Resolución de problemas por categorías (Arrays & Hashing $\to$ Two Pointers $\to$ Sliding Window $\to$ Stack $\to$ Binary Search $\to$ Trees).
 - **Régimen:** 2–3 problemas/semana (~3 h con repaso) integrado con el estudio de Go.
@@ -116,7 +117,9 @@ learning-dsa/
 │   ├── 2-dynamic-array.c  # Dynamic array con realloc amortizado
 │   ├── 3-array-tradeoffs.c# Inserción O(n) vs acceso O(1)
 │   └── 4-linked-list.c    # Doubly linked list manual limpia con ASan
-├── go/                    # ACTIVO — NeetCode Blind 75/150, 2–3 problemas/semana
+├── go/                    # ACTIVO desde 16 nov — NeetCode Blind 75/150, 2–3 problemas/semana
+│   ├── go.mod             # module learning-dsa (necesario para `go test`)
+│   └── arrays-hashing/    # un directorio por patrón; <problema>.go + <problema>_test.go
 └── graphs/                # Futuro (F5 en adelante) — grafos y problemas de sistemas
 ```
 
@@ -124,6 +127,6 @@ learning-dsa/
 
 ## 4. Reglas de Ejecución Técnica
 
-1. **Compilación Estricta:** Ejecuta siempre mediante `just run <archivo.c>` para C o `go test ./...` para Go.
+1. **Compilación Estricta:** Ejecuta siempre mediante `just run <archivo.c>` para C o `just test-dsa` para Go (equivalente a `go test -v -race -count=1 ./...` dentro de `learning-dsa/go/`).
 2. **Productive Failure (30–45 min):** Intenta resolver cada problema de forma autónoma. Si tras 30–45 minutos no logras avanzar, revisa la explicación del patrón, cierra la solución y prográmala tú mismo desde cero.
 3. **Persistencia Conceptual:** Diagramas de memoria y trade-offs se anotan en el vault de Obsidian (`MOC - DSA`). Aquí reside el código fuente limpio y ejecutable.

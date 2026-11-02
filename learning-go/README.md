@@ -6,7 +6,7 @@
 - **Toolchain local:** Go 1.26.5 (`go version` verificado).
 - **Período:** 2 nov 2026 – 15 feb 2027 (F2). Ver [`../calendario.md`](../calendario.md).
 - **Entregable de la fase:** `taskapi v1` con URL pública, tests, CI y README/ADRs. Vive en su propio repo, [`../projects/taskapi/`](../projects/taskapi/), no en este módulo. Ver [`../docs/roadmap.md`](../docs/roadmap.md#fase-2--go--postgresql-profundo--seguridad).
-- **DSA:** ya **no está en pausa**. 2–3 problemas/semana desde la semana 1. Ver [`../learning-dsa/README.md`](../learning-dsa/README.md).
+- **DSA:** arranca el **16 nov** (semana 3), no en la semana 1. Las dos primeras semanas son sintaxis Go pura: el bloque de 40 min se reasigna a los capítulos. 2–3 problemas/semana desde entonces. Ver [`../learning-dsa/README.md`](../learning-dsa/README.md).
 
 ---
 
@@ -77,12 +77,12 @@ No son capítulos que se cursan "porque tocan". Se consultan **cuando el proyect
 
 | Semana | Fechas | Go / proyecto | DSA |
 | :--- | :--- | :--- | :--- |
-| **S1** | 2 – 8 nov | Tour + `01-hello-world` + `02-integers` | 2–3 problemas (arrays / hash maps) |
-| **S2** | 9 – 15 nov | `03-iteration` + `04-arrays-slices`; esqueleto de [`taskapi`](../projects/taskapi/) (repo propio) + `docker compose` con Postgres | 2–3 problemas |
-| **S3** | 16 – 21 nov | `05-structs-methods-interfaces` + `06-pointers-errors`; 2 endpoints + table-driven tests | 2–3 problemas |
+| **S1** | 2 – 8 nov | Tour + `01-hello-world` + `02-integers` | — (bloque de 40 min reasignado a Go) |
+| **S2** | 9 – 15 nov | `03-iteration` + `04-arrays-slices`; esqueleto de [`taskapi`](../projects/taskapi/) (repo propio) + `docker compose` con Postgres | — (último bloque de sintaxis) |
+| **S3** | 16 – 21 nov | `05-structs-methods-interfaces` + `06-pointers-errors`; 2 endpoints + table-driven tests | **DSA arranca:** 3 problemas (Arrays & Hashing) |
 | **S4** | 22 – 30 nov | Semana de exámenes: sin temas nuevos, solo repaso | Repaso de errores |
 
-**Criterio de éxito de las 3 semanas:** `taskapi` con esqueleto corriendo en Docker, ≥2 endpoints con test, CI verde y 6–9 problemas DSA resueltos. No hace falta que esté desplegada todavía.
+**Criterio de éxito de las 3 semanas:** `taskapi` con esqueleto corriendo en Docker, ≥2 endpoints con test, CI verde y los 3 primeros problemas DSA resueltos. No hace falta que esté desplegada todavía.
 
 ### Vacaciones (dic 2026 – 15 feb 2027, ~24 h efectivas/semana)
 

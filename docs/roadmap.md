@@ -35,7 +35,7 @@
 
 **Disciplinas que atraviesan varias fases:**
 
-- **DSA:** F1 (arrays, punteros, dynamic array y linked list en C; stack, queue y hash table en Go) → F2 (árboles, sorting, slices en Go) → F3 (consistent hashing, caching) → F5 (repaso continuo para entrevistas en Go).
+- **DSA:** F1 (arrays, punteros, dynamic array y linked list en C; stack, queue y hash table en Go) → F2 (desde el 16 nov: Arrays & Hashing, Two Pointers, árboles, sorting en Go) → F3 (consistent hashing, caching) → F5 (repaso continuo para entrevistas en Go).
 - **Seguridad:** F2 (OWASP, JWT, secrets, bcrypt).
 - **Arquitectura & Patrones:** F2 (Repository, interfaces) → F3 (Circuit Breaker, Retry, Cache-aside) → F4 (Clean Architecture/Hexagonal, DDD pragmático, Monolito Modular, Fly.io retos 1–3).
 - **Comunicación técnica:** F4 (ADRs, RFCs, post-mortems, C4) → F5 (READMEs que convierten, behavioral STAR).
@@ -73,7 +73,7 @@
 | Referencia                 | [Open Data Structures](https://opendatastructures.org/) | Media     | Recomendado, no verificado con búsqueda dedicada                     |
 | Repaso espaciado           | [Anki](https://apps.ankiweb.net/) (escritorio) | —         | Una tarjeta por error cometido                                       |
 
-**Plan:** el track de C quedó cerrado con dynamic array y linked list (ver `learning-dsa/README.md`, 21 oct 2026). El resto de estructuras (stack, queue, hash table, BST, sorting) se practica directamente en Go desde F2, con NeetCode Blind 75 (~3 h/semana en clases, ~6 h/semana en vacaciones: 2–3 problemas nuevos + 1 h de repaso espaciado). Si tras 30-45 min no sale un problema: ver la solución en NeetCode, entender el patrón, y al día siguiente reescribirlo desde cero. Repasos a 1 día, 3 días, 1 semana, 2 semanas, 1 mes, 3 meses.
+**Plan:** el track de C quedó cerrado con dynamic array y linked list (ver `learning-dsa/README.md`, 21 oct 2026). El resto de estructuras (stack, queue, hash table, BST, sorting) se practica directamente en Go **desde la semana 3 de F2 (16 nov 2026)**, con NeetCode Blind 75 (~3 h/semana en clases, ~6 h/semana en vacaciones: 2–3 problemas nuevos + 1 h de repaso espaciado). Las dos primeras semanas de F2 son de sintaxis Go: sin `func`, `for`/`range`, slices y `map` no se resuelve DSA, porque el ejercicio se convierte en transcripción de la editorial. Si tras 30-45 min no sale un problema: ver la solución en NeetCode, entender el patrón, y al día siguiente reescribirlo desde cero. Repasos a 1 día, 3 días, 1 semana, 2 semanas, 1 mes, 3 meses.
 
 **Complementos del roadmap original (no verificados por SOURCES.md, útiles como práctica adicional):** [Data Structures Easy to Advanced](https://www.youtube.com/watch?v=RBSGKlAvoiM) (freeCodeCamp/Fiset, ver por secciones); [70 Leetcode problems](https://www.youtube.com/watch?v=lvO88XxNAzs) (Stoney codes, problemas reales por estructura).
 

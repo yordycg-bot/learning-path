@@ -29,7 +29,7 @@
 
 | Día | Bloque |
 | :--- | :--- |
-| **Sábado** | 40 min DSA en Go + 80 min Go o teoría de la fase |
+| **Sábado** | 40 min DSA en Go (desde el 16 nov; antes, ese bloque es Go) + 80 min Go o teoría de la fase |
 | **Domingo** | 2 h de proyecto (código) + 20 min revisión semanal |
 | **Lunes** | 1 h teoría/Postgres + 20 min bitácora en inglés + 15 min repaso espaciado |
 | **Mar–Vie** | Opcional: 15 min de Anki o una lectura corta en inglés |
@@ -47,7 +47,8 @@
 
 | Periodo | Régimen | Foco Técnico | Entregable / Hito |
 | :--- | :--- | :--- | :--- |
-| **2 – 21 nov 2026** | Clases (6 h/sem) | Go básico (Tour, *Learn Go with Tests*), DSA en Go, primeros tests de `taskapi` | Repo `taskapi` iniciado + 9 katas |
+| **2 – 15 nov 2026** | Clases (6 h/sem) | Go básico (Tour, *Learn Go with Tests*), primeros tests de `taskapi` | Repo `taskapi` iniciado |
+| **16 – 21 nov 2026** | Clases (6 h/sem) | Capítulos 05–06 + 2 endpoints; arranca DSA en Go | Repo `taskapi` iniciado + 3 problemas DSA |
 | **22 – 30 nov 2026** | Evaluaciones (20 min/día) | Repaso de DSA | Racha mantenida |
 | **Dic 2026** | Vacaciones | Go a fondo (goroutines, channels, `context`), Postgres (schema, índices, transacciones), CRUD de `taskapi` | `taskapi` con CRUD sobre Postgres + tests |
 | **Ene 2027** | Vacaciones | `taskapi` MVP: JWT, bcrypt, validación, Docker, README en inglés | `taskapi` terminado |

@@ -19,7 +19,7 @@
 
 | Bloque | Tiempo | Contenido |
 | :--- | :--- | :--- |
-| 1 | 40 min | DSA en Go (1 problema nuevo + repaso) |
+| 1 | 40 min | DSA en Go (1 problema + repaso) — **desde el 16 nov**; antes, ese bloque es sintaxis Go |
 | 2 | 60 min | Proyecto o teoría de la fase |
 | 3 | 20 min | Bitácora en inglés (2–3 líneas) + repaso espaciado |
 
@@ -44,7 +44,7 @@
 
 | Fecha | Hito | Evidencia |
 | :--- | :--- | :--- |
-| 21 nov 2026 | Fin de clases | `taskapi` iniciado + hábito de DSA en Go |
+| 21 nov 2026 | Fin de clases | `taskapi` iniciado + DSA en Go iniciado |
 | 15 feb 2027 | **G1** | `taskapi` con Docker, tests y auth |
 | 31 mar 2027 | `resilient-api` | `docker compose up` con métricas y CI |
 | 30 abr 2027 | **G2** | Hexagonal + 2 ADR + 5 casos de diseño |
