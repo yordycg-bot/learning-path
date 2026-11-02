@@ -34,21 +34,23 @@ Presupuesto máximo de tutoriales: **20 % del tiempo** de la fase. El 80 % resta
 
 ---
 
-## 3. Núcleo: 6 capítulos (obligatorios)
+## 3. Núcleo: 7 capítulos (obligatorios)
 
-Fuente principal: <https://quii.gitbook.io/learn-go-with-tests> + <https://go.dev/tour/>
+Fuente principal: [Learn Go with Tests](https://quii.gitbook.io/learn-go-with-tests) — es la columna vertebral, no un complemento. Referencias de sintaxis puntual: [Go by Example](https://gobyexample.com/) y [A Tour of Go](https://go.dev/tour/); el Tour **no se cursa linealmente**, se consulta cuando un capítulo pide algo que todavía no viste.
 
 Ciclo obligatorio en cada capítulo: **escribir el test que falla → implementación mínima → refactor**. Nada de copiar la solución del libro antes de intentarlo.
 
 | # | Directorio | Contenido | DoD (Definition of Done) |
 | :-- | :--- | :--- | :--- |
-| 00 | *(sin directorio)* | [A Tour of Go](https://go.dev/tour/) — Basics, Flow control, More types, Methods & interfaces | Reescribir sin mirar un programa de ~40 líneas con struct, slice, map, método y `error` |
 | 01 | `01-hello-world/` | Estructura de paquetes, `testing.T`, subtests | `go test ./...` verde y `go vet` limpio |
 | 02 | `02-integers/` | Documentación de funciones, `ExampleAdd` | `go test` ejecuta también el ejemplo |
 | 03 | `03-iteration/` | `for`, benchmarks con `testing.B` | `just bench-go` produce números estables |
 | 04 | `04-arrays-slices/` | Arrays vs slices, `append`, variádicas, `cap` | Explicar por escrito por qué `append` puede realocar |
 | 05 | `05-structs-methods-interfaces/` | Structs, receptores, interfaces implícitas, table-driven tests | Un test de mesa con ≥3 casos por función |
 | 06 | `06-pointers-errors/` | Punteros a struct, mutación de receptores, `error`, `errors.New`, `errors.Is`/`As` | Un error propio envuelto y comprobado en test |
+| 07 | `07-maps/` | `map[K]V`, `make`, `comma-ok`, `delete`, `range` sobre maps | Un test que deduplique con `map` y otro que distinga clave ausente de valor cero (`comma-ok`) |
+
+**Checkpoint del núcleo (sin directorio, al cerrar 01–07):** reescribir sin mirar un programa de ~40 líneas con struct, slice, map, método y `error`. El Tour de Go sirve como referencia aquí, no como capítulo.
 
 Cierre del núcleo: un programa de ~80 líneas que lea un JSON de logs, filtre por nivel y escriba el resultado, usando solo la stdlib.
 
@@ -60,14 +62,13 @@ No son capítulos que se cursan "porque tocan". Se consultan **cuando el proyect
 
 | Tema | Cuándo se estudia | En qué se nota |
 | :--- | :--- | :--- |
-| `maps` | Al modelar índices en memoria o deduplicar | `07-maps/` |
 | Dependency injection | Al inyectar el pool de Postgres o el logger en el handler | `08-dependency-injection/` |
 | Mocking | Al testear un handler sin DB real | `09-mocking/` |
 | Concurrencia (`goroutine`, `channel`, `WaitGroup`) | Al implementar rate limiting o procesar en background | `10-concurrency/` |
 | `select`, timeouts, `sync` | Al agregar cancelación por `context` y graceful shutdown | `11-select-sync/` |
 | `net/http`, `httptest`, `encoding/json`, `context` | **Semana 2**, al construir el primer endpoint | `12-http-json/` |
 
-> Los capítulos 07–12 conservan su directorio porque son la referencia práctica del tema; se crean **solo cuando aparezca la necesidad** en `taskapi`, no por calendario.
+> Los capítulos 08–12 conservan su directorio porque son la referencia práctica del tema; se crean **solo cuando aparezca la necesidad** en `taskapi`, no por calendario. `07-maps` salió de esta lista: es obligatorio antes del 16 nov porque el primer bloque de DSA lo necesita.
 
 ---
 
@@ -77,8 +78,8 @@ No son capítulos que se cursan "porque tocan". Se consultan **cuando el proyect
 
 | Semana | Fechas | Go / proyecto | DSA |
 | :--- | :--- | :--- | :--- |
-| **S1** | 2 – 8 nov | Tour + `01-hello-world` + `02-integers` | — (bloque de 40 min reasignado a Go) |
-| **S2** | 9 – 15 nov | `03-iteration` + `04-arrays-slices`; esqueleto de [`taskapi`](../projects/taskapi/) (repo propio) + `docker compose` con Postgres | — (último bloque de sintaxis) |
+| **S1** | 2 – 8 nov | `01-hello-world` + `02-integers` | — (bloque de 40 min reasignado a Go) |
+| **S2** | 9 – 15 nov | `03-iteration` + `04-arrays-slices` + `07-maps`; esqueleto de [`taskapi`](../projects/taskapi/) (repo propio) + `docker compose` con Postgres | — (último bloque de sintaxis) |
 | **S3** | 16 – 21 nov | `05-structs-methods-interfaces` + `06-pointers-errors`; 2 endpoints + table-driven tests | **DSA arranca:** 3 problemas (Arrays & Hashing) |
 | **S4** | 22 – 30 nov | Semana de exámenes: sin temas nuevos, solo repaso | Repaso de errores |
 
@@ -88,7 +89,7 @@ No son capítulos que se cursan "porque tocan". Se consultan **cuando el proyect
 
 | Bloque | Foco | Resultado |
 | :--- | :--- | :--- |
-| Dic | Auth completa, migraciones, tests de integración con Postgres, `07`–`09` si hicieron falta | `taskapi` con CRUD + auth + tests |
+| Dic | Auth completa, migraciones, tests de integración con Postgres, `08`–`09` si hicieron falta | `taskapi` con CRUD + auth + tests |
 | Ene | Concurrencia aplicada (rate limiting), `slog`, Dockerfile multi-stage | API dockerizada |
 | 1 – 15 feb | Hardening, deploy con HTTPS, README + ADRs, **gate G1** | `taskapi v1` pública y presentable |
 
@@ -133,7 +134,7 @@ Verificación manual antes de cada commit:
 learning-go/
 ├── go.mod          # module learning-go (go 1.26)
 ├── README.md       # este archivo
-└── NN-tema/        # núcleo 01–06, se crea al empezar cada capítulo con su test primero
+└── NN-tema/        # núcleo 01–07, se crea al empezar cada capítulo con su test primero
 ```
 
 `taskapi` **no** vive aquí: es un repositorio independiente en [`../projects/taskapi/`](../projects/taskapi/), con su propio `go.mod`, build system y commits. Este módulo es solo el cuaderno de estudio de Go.
@@ -144,7 +145,7 @@ No se crean directorios vacíos ni tests de relleno: el primer commit de cada ca
 
 ## 9. Referencias
 
-- [A Tour of Go](https://go.dev/tour/) — arranque oficial.
+- [A Tour of Go](https://go.dev/tour/) — referencia de sintaxis, no un capítulo del track.
 - [Learn Go with Tests](https://quii.gitbook.io/learn-go-with-tests) — columna vertebral TDD.
 - [Go by Example](https://gobyexample.com/) — sintaxis puntual.
 - [Effective Go](https://go.dev/doc/effective_go) — idiomatismo.

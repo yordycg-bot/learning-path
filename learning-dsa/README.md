@@ -10,7 +10,7 @@
 > - **Maximización del ROI para Backend & Entrevistas:** Implementar desde cero estructuras auxiliares en C (stack, queue, hash table) aporta rendimientos decrecientes frente a la meta laboral. El entrenamiento algorítmico se traslada directamente a **Go** (`learning-dsa/go/` y NeetCode Blind 75), priorizando el **reconocimiento de patrones** (Two Pointers, Sliding Window, Monotonic Stack, Hash Sets), la fluidez idiomática con `slices` y `maps`, y el análisis de trade-offs en tiempo y espacio.
 > - **Qué se gana y qué se sacrifica:** se sacrifica la implementación manual de hash table en C; se compensa leyendo los internals de `map` en Go (Swiss tables) y resolviendo la categoría Arrays & Hashing de NeetCode. El criterio de selección se conserva; solo cambia el lenguaje de práctica.
 > - **DSA es hilo permanente, no fase:** arranca el **16 nov 2026** (semana 3 de F2) a **2–3 problemas/semana**, en paralelo a Go. Es requisito de entrevista, no un extra; por eso no se posterga ni se hace sprint final. Los problemas se resuelven **en Go** desde el inicio.
-> - **Prerrequisito de sintaxis (2–15 nov 2026):** el primer bloque de F2 es Tour + capítulos `01`–`04` de *Learn Go with Tests*. Resolver DSA en un lenguaje que aún no se sabe escribir convierte el ejercicio en transcripción de la editorial; por eso el bloque diario de 40 min se reasigna a Go hasta que exista el vocabulario mínimo (`func`, `for`/`range`, slices, `map`).
+> - **Prerrequisito de sintaxis (2–15 nov 2026):** el primer bloque de F2 son los capítulos `01`–`04` y `07-maps` de *Learn Go with Tests*. Resolver DSA en un lenguaje que aún no se sabe escribir convierte el ejercicio en transcripción de la editorial; por eso el bloque diario de 40 min se reasigna a Go hasta que exista el vocabulario mínimo (`func`, `for`/`range`, slices, `map`).
 > - **Meta:** **~100–120 problemas** al cierre de F5 (nov 2027), organizados por patrón, con repaso de errores.
 
 ---
@@ -45,7 +45,7 @@
 
 | Semana | Fechas | Patrón | Objetivo |
 | :--- | :--- | :--- | :--- |
-| **G0** | 2 – 15 nov | *(sin DSA: bloque de sintaxis Go)* | Tour + capítulos `01`–`04` de *Learn Go with Tests* |
+| **G0** | 2 – 15 nov | *(sin DSA: bloque de sintaxis Go)* | Capítulos `01`–`04` y `07-maps` de *Learn Go with Tests* |
 | **G1** | 16 – 22 nov | Arrays & Hashing | 3 problemas: `contains duplicate`, `valid anagram`, `two sum` |
 | **G2** | 23 – 29 nov | **Repaso** (exámenes) | Rehacer los 3 problemas que peor salieron |
 | **dic 2026 – feb 2027** | Vacaciones | Two Pointers → Sliding Window → Stack → Binary Search → Linked List → Trees | 3/semana · acumulado ~33 a 15 feb |

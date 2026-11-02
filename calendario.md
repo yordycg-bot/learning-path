@@ -47,7 +47,7 @@
 
 | Periodo | Régimen | Foco Técnico | Entregable / Hito |
 | :--- | :--- | :--- | :--- |
-| **2 – 15 nov 2026** | Clases (6 h/sem) | Go básico (Tour, *Learn Go with Tests*), primeros tests de `taskapi` | Repo `taskapi` iniciado |
+| **2 – 15 nov 2026** | Clases (6 h/sem) | Go básico (capítulos `01`–`04` y `07-maps` de *Learn Go with Tests*), primeros tests de `taskapi` | Repo `taskapi` iniciado |
 | **16 – 21 nov 2026** | Clases (6 h/sem) | Capítulos 05–06 + 2 endpoints; arranca DSA en Go | Repo `taskapi` iniciado + 3 problemas DSA |
 | **22 – 30 nov 2026** | Evaluaciones (20 min/día) | Repaso de DSA | Racha mantenida |
 | **Dic 2026** | Vacaciones | Go a fondo (goroutines, channels, `context`), Postgres (schema, índices, transacciones), CRUD de `taskapi` | `taskapi` con CRUD sobre Postgres + tests |
