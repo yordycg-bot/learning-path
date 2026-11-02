@@ -57,9 +57,10 @@ just run <file>   # Compila y ejecuta con ASan + UBSan en C, o -race en Go
 just test <file>  # Ejecuta y valida el código de retorno ($?)
 just check <file> # Comprobación de sintaxis estática rápida
 just test-go      # go test -v -race -count=1 ./... en learning-go/
+just test-dsa     # go test -v -race -count=1 ./... en learning-dsa/go/
 just bench-go     # Benchmarks de learning-go/
-just fmt-go       # gofmt sobre learning-go/
-just lint-go      # go vet sobre learning-go/
+just fmt-go       # gofmt sobre learning-go/ y learning-dsa/go/
+just lint-go      # go vet sobre learning-go/ y learning-dsa/go/
 just test-taskapi # go test -v -race -count=1 ./... en projects/taskapi/ (F2)
 just mysh         # Compila el proyecto semanal mysh
 just clean        # Limpia binarios generados en build/

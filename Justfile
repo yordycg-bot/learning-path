@@ -92,6 +92,21 @@ test-go:
     fi
     go test -v -race -count=1 ./...
 
+# Ejecuta todos los tests de learning-dsa con detector de carreras
+test-dsa:
+    #!/usr/bin/env bash
+    set -uo pipefail
+    if [ ! -d learning-dsa/go ]; then
+        echo "learning-dsa/go/ todavía no existe. DSA arranca el 16 nov 2026."
+        exit 0
+    fi
+    cd learning-dsa/go
+    if [ -z "$(find . -name '*_test.go' -print -quit)" ]; then
+        echo "Aún no hay tests en learning-dsa/go/. Escribe tu primer *_test.go y vuelve a intentarlo."
+        exit 0
+    fi
+    go test -v -race -count=1 ./...
+
 # Ejecuta los benchmarks de learning-go
 bench-go:
     #!/usr/bin/env bash
@@ -103,25 +118,33 @@ bench-go:
     fi
     go test -run '^$' -bench=. -benchmem ./...
 
-# Aplica el formateador oficial de Go sobre learning-go
+# Aplica el formateador oficial de Go sobre learning-go y learning-dsa
 fmt-go:
     #!/usr/bin/env bash
     set -euo pipefail
-    cd learning-go
-    gofmt -l -w .
-    echo "✓ gofmt aplicado en learning-go/"
+    for dir in learning-go learning-dsa/go; do
+        if [ -d "$dir" ]; then
+            (cd "$dir" && gofmt -l -w .)
+        fi
+    done
+    echo "✓ gofmt aplicado en learning-go/ y learning-dsa/go/"
 
 # Análisis estático de Go (golangci-lint se añadirá cuando haya código real)
 lint-go:
     #!/usr/bin/env bash
     set -uo pipefail
-    cd learning-go
-    if [ -z "$(find . -name '*.go' -print -quit)" ]; then
-        echo "Aún no hay código Go en learning-go/."
+    found=0
+    for dir in learning-go learning-dsa/go; do
+        if [ -d "$dir" ] && [ -n "$(find "$dir" -name '*.go' -print -quit)" ]; then
+            found=1
+            (cd "$dir" && go vet ./...)
+        fi
+    done
+    if [ "$found" -eq 0 ]; then
+        echo "Aún no hay código Go en learning-go/ ni learning-dsa/go/."
         exit 0
     fi
-    go vet ./...
-    echo "✓ go vet sin hallazgos en learning-go/"
+    echo "✓ go vet sin hallazgos"
 
 # Ejecuta los tests de taskapi (repo independiente en projects/)
 test-taskapi:
